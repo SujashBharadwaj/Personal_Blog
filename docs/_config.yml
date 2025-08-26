@@ -1,0 +1,6 @@
+title: Interactive Learning of ML_Models
+description: Articles with textbook-accurate explanations and interactive demos of foundational machine learning models.
+theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  input: GFM
