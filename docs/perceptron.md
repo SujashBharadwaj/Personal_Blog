@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="assets/style.css">
+
+<div class="main-wrap">
+
 # The Perceptron: The First Learning Machine (1958)
 
 ## 1. Historical context
