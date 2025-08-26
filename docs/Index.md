@@ -1,14 +1,21 @@
+<link rel="stylesheet" href="assets/style.css">
+
+<div class="main-wrap">
+
 # Interactive Learning of ML_Models
 
-Welcome to **Interactive Learning of ML_Models**, a collection of articles and hands-on demonstrations of foundational machine learning models.  
+Welcome to **Interactive Learning of ML_Models**, a collection of articles and demonstrations of foundational machine learning models.
 
 The goal of this project is to make machine learning **teachable, rigorous, and interactive**.  
-Each model is introduced through:  
+Each model is introduced through:
+
 - Historical background and origin  
 - Mathematical formulation  
 - How the learning algorithm works  
 - Limitations and practical considerations  
-- Interactive visualizations you can experiment with directly in your browser  
+- Visualizations and interactive experiments  
+
+---
 
 ## Articles
 
@@ -18,5 +25,7 @@ Each model is introduced through:
 
 ---
 
-This site is powered by **GitHub Pages**. All articles and demos live in this repository:  
-[ML_Models on GitHub](https://github.com/<your-username>/ML_Models)
+This site is powered by GitHub Pages. All articles and demos live in this repository:  
+[ML_Models on GitHub](https://github.com/SujashBharadwaj/ML_Models)
+
+</div>
