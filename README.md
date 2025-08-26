@@ -31,7 +31,7 @@ Each article will include:
 ## Access
 
 Once published, the site will be available at:  
-`https://<username>.github.io/<repository-name>/`
+https://github.com/SujashBharadwaj/ML_Models/blob/main/README.md'
 
 ## Purpose
 
