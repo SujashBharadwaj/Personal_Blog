@@ -4,28 +4,21 @@
 
 # Interactive Learning of ML_Models
 
-Welcome to **Interactive Learning of ML_Models**, a collection of articles and demonstrations of foundational machine learning models.
-
-The goal of this project is to make machine learning **teachable, rigorous, and interactive**.  
-Each model is introduced through:
-
-- Historical background and origin  
-- Mathematical formulation  
-- How the learning algorithm works  
-- Limitations and practical considerations  
-- Visualizations and interactive experiments  
+A static, citable resource that explains core machine learning models with **history**, **math**, and **in-browser interactive demos**.
 
 ---
 
-## Articles
-
-- [Perceptron (1958)](perceptron.md) – the first learning machine  
-- [Linear Regression](linear-regression.md) – least squares and residuals  
-- (More models coming soon…)
+## Contents
+- **Perceptron (1958)** — the first learning machine: [Article](perceptron.md) · [Demo](demos/perceptron-demo.html)
+- Linear Regression — least squares and residuals (coming soon)
 
 ---
 
-This site is powered by GitHub Pages. All articles and demos live in this repository:  
-[ML_Models on GitHub](https://github.com/SujashBharadwaj/ML_Models)
+## Vision
+Most resources either show code without theory or theory without intuition. This site keeps both:
+1. **Textbook-accurate articles** with references.  
+2. **Interactive pages** where you can change data and parameters and watch the model respond.
+
+Repository: https://github.com/SujashBharadwaj/ML_Models
 
 </div>
