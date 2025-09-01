@@ -4,13 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>A practical guide to means in statistics</title>
-  <meta name="description" content="Arithmetic, geometric, harmonic, quadratic (RMS), weighted, trimmed, and the power mean family—when to use which, with quick examples." />
-  <!-- Open Graph for LinkedIn/WhatsApp/Twitter -->
-  <meta property="og:title" content="A practical guide to means in statistics" />
-  <meta property="og:description" content="Arithmetic, geometric, harmonic, quadratic (RMS), weighted, trimmed, and the power mean family—when to use which, with quick examples." />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://sujashbharadwaj.github.io/Personal_Blog/blog/means-guide.html" />
-  <meta property="og:image" content="https://sujashbharadwaj.github.io/Personal_Blog/assets/img/profile.png" />
+  <meta name="description" content="Arithmetic, geometric, harmonic, RMS, weighted, trimmed, and the power mean family—when to use which, with quick examples." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css" />
   <style>
@@ -18,18 +12,16 @@
     .post-meta{color:#666;font-size:.95rem;margin-top:-6px}
     pre{background:#f5f6fb;border:1px solid #e9ecff;padding:12px;border-radius:10px;overflow:auto}
     code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.95rem}
-    .def{background:#f6f8ff;border-left:4px solid #1e3a8a;padding:10px 12px;border-radius:8px}
     table{border-collapse:collapse;width:100%;margin:8px 0 16px}
     th,td{border:1px solid #e6e9ff;padding:8px;text-align:left}
     tbody tr:nth-child(odd){background:#fbfcff}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
   </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="../">Sujash</a>
+    <a class="logo" href="../homepage.html">Sujash</a>
     <nav class="nav">
-      <a href="../">Home</a>
+      <a href="../homepage.html">Home</a>
       <a href="../about/">About</a>
       <a href="../projects/">Projects</a>
       <a class="active" href="../blog/">Blog</a>
@@ -38,96 +30,55 @@
   </header>
 
   <main class="article">
-    <article class="post reveal">
+    <article class="post">
       <h1>A practical guide to means in statistics</h1>
-      <p class="post-meta">Published: <time datetime="2025-09-01">Sep 1, 2025</time> • Reading time: 7–9 min</p>
+      <p class="post-meta">Published: <time datetime="2025-09-01">Sep 1, 2025</time> · Reading time: ~7 min</p>
 
-      <p class="def">
-        <strong>TL;DR:</strong> For positive data, the classic order is
-        <strong>Harmonic ≤ Geometric ≤ Arithmetic ≤ Quadratic (RMS) ≤ Contraharmonic</strong>.
-        Each mean answers a different “average” question.
-      </p>
+      <p>Different “means” answer different questions. For positive numbers, a good rule of thumb is:
+      <strong>Harmonic ≤ Geometric ≤ Arithmetic ≤ RMS ≤ Contraharmonic</strong>.</p>
 
-      <h2>Dataset we’ll use</h2>
-      <p>Let’s use <span class="mono">x = [1, 2, 8]</span> (all positive—important for some means).</p>
+      <h2>Example dataset</h2>
+      <p>Use <code>x = [1, 2, 8]</code>.</p>
 
-      <h2>Arithmetic Mean (AM)</h2>
-      <p><em>“Evenly share the total.”</em></p>
-      <p><strong>Formula:</strong> \( \bar{x} = \frac{1}{n} \sum x_i \)</p>
-      <p><strong>Example:</strong> (1 + 2 + 8) / 3 = 11 / 3 ≈ 3.6667</p>
-      <p><strong>Use when:</strong> Additive quantities; typical default. <strong>Not robust</strong> to outliers.</p>
+      <h2>Arithmetic mean (AM)</h2>
+      <p>Average of values. Formula: (1/n) Σ x<sub>i</sub>. Example: (1+2+8)/3 = 3.6667. Use for additive quantities.</p>
 
-      <h2>Geometric Mean (GM)</h2>
-      <p><em>“Typical multiplicative growth.”</em> (Requires <strong>all values &gt; 0</strong>.)</p>
-      <p><strong>Formula:</strong> \( \left(\prod x_i\right)^{1/n} \)</p>
-      <p><strong>Example:</strong> (1 × 2 × 8)^(1/3) = 16^(1/3) ≈ 2.5198</p>
-      <p><strong>Use when:</strong> Growth rates, ratios, normalized scores.</p>
+      <h2>Geometric mean (GM)</h2>
+      <p>Typical multiplicative change. Formula: (∏ x<sub>i</sub>)<sup>1/n</sup>. Example: (1·2·8)<sup>1/3</sup> = 2.5198. Requires x>0.</p>
 
-      <h2>Harmonic Mean (HM)</h2>
-      <p><em>“Average of rates.”</em> (Requires <strong>all values &gt; 0</strong>.)</p>
-      <p><strong>Formula:</strong> \( \displaystyle HM = \frac{n}{\sum (1/x_i)} \)</p>
-      <p><strong>Example:</strong> 3 / (1/1 + 1/2 + 1/8) = 3 / 1.625 = 1.8462</p>
-      <p><strong>Use when:</strong> Speeds, efficiencies, “items per unit time”. Penalizes small values strongly.</p>
+      <h2>Harmonic mean (HM)</h2>
+      <p>Average of rates. Formula: n / Σ(1/x<sub>i</sub>). Example: 3 / (1 + 0.5 + 0.125) = 1.8462. Requires x>0.</p>
 
-      <h2>Quadratic Mean (RMS)</h2>
-      <p><em>“Energy/magnitude average.”</em></p>
-      <p><strong>Formula:</strong> \( \displaystyle \sqrt{\frac{1}{n}\sum x_i^2} \)</p>
-      <p><strong>Example:</strong> sqrt((1² + 2² + 8²) / 3) = sqrt(69 / 3) = sqrt(23) ≈ 4.7958</p>
-      <p><strong>Use when:</strong> Signals, errors, distances; emphasizes large values.</p>
+      <h2>RMS (quadratic mean)</h2>
+      <p>Emphasizes large values. Formula: √[(1/n) Σ x<sub>i</sub><sup>2</sup>]. Example: √(23) = 4.7958.</p>
 
-      <h2>Contraharmonic Mean (C)</h2>
-      <p><em>“Intensity-weighted average.”</em> (Requires <strong>nonnegative</strong> values.)</p>
-      <p><strong>Formula:</strong> \( \displaystyle C = \frac{\sum x_i^2}{\sum x_i} \)</p>
-      <p><strong>Example:</strong> (1 + 4 + 64) / (1 + 2 + 8) = 69 / 11 ≈ 6.2727</p>
-      <p><strong>Use when:</strong> You want to reward larger values even more than RMS (e.g., bright pixels).</p>
+      <h2>Contraharmonic mean</h2>
+      <p>Even more weight on big values. Formula: (Σ x<sub>i</sub><sup>2</sup>) / (Σ x<sub>i</sub>). Example: 69/11 = 6.2727 (nonnegative data).</p>
 
-      <h2>Weighted Mean</h2>
-      <p><em>“Some observations matter more.”</em></p>
-      <p><strong>Formula:</strong> \( \displaystyle \bar{x}_w = \frac{\sum w_i x_i}{\sum w_i} \) (usually \( \sum w_i = 1 \))</p>
-      <p><strong>Example:</strong> values [10,20,30], weights [0.2,0.3,0.5] ⇒ 10·0.2 + 20·0.3 + 30·0.5 = 23</p>
-
-      <h2>Trimmed Mean</h2>
-      <p><em>“Average without the extremes.”</em></p>
-      <p>Remove a fixed % from both ends after sorting, then take AM.</p>
-      <p><strong>Example:</strong> [5, 6, 7, 100] with 25% trim ⇒ drop 5 and 100 ⇒ mean(6,7) = 6.5</p>
-      <p><strong>Use when:</strong> You want robustness to outliers but still keep a mean.</p>
-
-      <h2>The Power Mean family (Generalized Mean)</h2>
-      <p>
-        \( \displaystyle M_p(x) = \left(\frac{1}{n}\sum x_i^p\right)^{1/p} \).
-        For positive numbers:
-      </p>
+      <h2>Weighted and trimmed means</h2>
       <ul>
-        <li>p → −∞ gives min</li>
-        <li>p = −1 → Harmonic</li>
-        <li>p → 0 → Geometric (limit)</li>
-        <li>p = 1 → Arithmetic</li>
-        <li>p = 2 → Quadratic (RMS)</li>
-        <li>p → +∞ gives max</li>
+        <li><strong>Weighted:</strong> Σ w<sub>i</sub>x<sub>i</sub> / Σ w<sub>i</sub> — use when some observations matter more.</li>
+        <li><strong>Trimmed:</strong> drop extremes, then take AM — more robust against outliers.</li>
       </ul>
-      <p><strong>Order (for positive data):</strong> HM ≤ GM ≤ AM ≤ RMS ≤ Contraharmonic.</p>
 
-      <h2>Which mean should I use?</h2>
+      <h2>Power-mean family (generalized mean)</h2>
+      <p>M<sub>p</sub>(x) = [(1/n) Σ x<sub>i</sub><sup>p</sup>]<sup>1/p</sup>.
+      p = −1 → HM, p→0 → GM, p = 1 → AM, p = 2 → RMS.</p>
+
+      <h2>When to use what</h2>
       <table>
-        <thead><tr><th>Situation</th><th>Prefer</th><th>Why</th></tr></thead>
+        <thead><tr><th>Situation</th><th>Pick</th><th>Why</th></tr></thead>
         <tbody>
-          <tr><td>Additive totals / default reporting</td><td>Arithmetic</td><td>Straight average of values</td></tr>
-          <tr><td>Multiplicative effects (growth, ratios)</td><td>Geometric</td><td>Captures typical proportional change</td></tr>
-          <tr><td>Rates (e.g., km/h across segments)</td><td>Harmonic</td><td>Correctly averages “per unit” quantities</td></tr>
-          <tr><td>Signal magnitudes / energy</td><td>RMS</td><td>Squares emphasize larger magnitudes</td></tr>
-          <tr><td>Outliers present, keep mean</td><td>Trimmed mean</td><td>More robust than AM</td></tr>
-          <tr><td>Different importances</td><td>Weighted mean</td><td>Reflects weights (credits, sample sizes)</td></tr>
+          <tr><td>Default reporting</td><td>AM</td><td>Straight average of values</td></tr>
+          <tr><td>Growth/ratios</td><td>GM</td><td>Captures multiplicative effects</td></tr>
+          <tr><td>Speeds/efficiencies</td><td>HM</td><td>Averages “per unit” correctly</td></tr>
+          <tr><td>Magnitudes/energy</td><td>RMS</td><td>Squares stress large values</td></tr>
+          <tr><td>Outliers present</td><td>Trimmed mean</td><td>More robust than AM</td></tr>
+          <tr><td>Different importances</td><td>Weighted mean</td><td>Respects weights</td></tr>
         </tbody>
       </table>
 
-      <h2>Key cautions</h2>
-      <ul>
-        <li><strong>GM & HM need positive values.</strong> Zero/negative breaks them.</li>
-        <li><strong>AM & RMS are outlier-sensitive.</strong> Consider trimming or median-based summaries.</li>
-        <li>Always state <em>which</em> mean you used and <em>why</em>.</li>
-      </ul>
-
-      <hr>
+      <p>Always name the mean you used and why.</p>
       <p><a href="../blog/">← Back to Blog</a></p>
     </article>
   </main>
