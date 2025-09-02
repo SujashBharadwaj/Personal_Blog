@@ -5,30 +5,46 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Projects — Sujash</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .projects-hero{max-width:980px;margin:0 auto;padding:8px 12px}
+    .projects-hero h1{margin:0}
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="/">Sujash</a>
+    <a class="logo" href="../homepage.html">Sujash</a>
     <nav class="nav">
-      <a href="/">Home</a>
-      <a href="/about/">About</a>
-      <a class="active" href="/projects/">Projects</a>
-      <a href="/blog/">Blog</a>
+      <a href="../homepage.html">Home</a>
+      <a href="../about/">About</a>
+      <a class="active" href="./">Projects</a>
+      <a href="../blog/">Blog</a>
       <a class="cta" href="mailto:sujashbharadwaj10@gmail.com">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="tiles">
+    <section class="projects-hero">
       <h1>Projects</h1>
-      <p>Shipping small, interactive builds. I’ll keep this page updated.</p>
+      <p class="lede">A mix of coursework and self-driven builds. Click a project to view details.</p>
+    </section>
+
+    <section class="tiles">
+      <h2>Featured</h2>
       <div class="grid">
-        <!-- Add tiles as you build -->
-        <article class="tile">
-          <h3>Coming soon</h3>
-          <p>First set of ML mini-projects.</p>
-        </article>
+        <!-- IITM BDM Capstone -->
+        <a class="tile link" href="BDMcapstone/">
+          <h3>IITM BDM Capstone</h3>
+          <p>Client segmentation and retention analysis for Raftaar. Proposal, mid term, final, and presentation embedded on one page.</p>
+        </a>
+
+        <!-- Add more projects later by duplicating a card like this -->
+        <!--
+        <a class="tile link" href="YourNextProject/">
+          <h3>Your Next Project</h3>
+          <p>One-line what it is and what you did.</p>
+        </a>
+        -->
       </div>
     </section>
   </main>
@@ -42,6 +58,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
